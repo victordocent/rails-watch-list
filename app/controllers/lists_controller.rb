@@ -9,7 +9,6 @@ class ListsController < ApplicationController
 
   def show
     @movies = @list.movies
-    @bookmark = Bookmark.new
   end
 
   def new
@@ -19,7 +18,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(params_list)
     if @list.save
-      redirect_to list_path(@list)
+      redirect_to lists_path(@list)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,6 +31,6 @@ class ListsController < ApplicationController
   end
 
   def params_list
-    params.require(:list).permit(:name, movie_ids: [])
+    params.require(:list).permit(:name)
   end
 end
