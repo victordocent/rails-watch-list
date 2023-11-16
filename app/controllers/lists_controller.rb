@@ -1,3 +1,5 @@
+# app/controllers/lists_controller.rb
+
 class ListsController < ApplicationController
   before_action :set_list, only: [:show]
 
@@ -19,7 +21,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -30,6 +32,6 @@ class ListsController < ApplicationController
   end
 
   def params_list
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, movie_ids: [])
   end
 end
