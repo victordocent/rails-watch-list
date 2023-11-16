@@ -4,6 +4,7 @@
 
 <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
-  <%= f.association :movies, as: :check_boxes %>
   <%= f.button :submit %>
 <% end %>
+
+<%= link_to "Go back to homepage", lists_path %>

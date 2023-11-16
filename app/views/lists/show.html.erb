@@ -3,6 +3,16 @@
 <div class="container">
   <h1><%= @list.name %></h1>
 
+  <h2>Add movies</h2>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, as: :check_boxes %>
+    <%= f.input :comment, label: "Comment" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+
+  <h2>Movies in the list</h2>
+
   <div class="row">
     <% @movies.each do |movie| %>
       <div class="col-md-4">
