@@ -1,0 +1,9 @@
+<!-- views/lists/index.html.erb -->
+
+<h1>My Lists</h1>
+
+<% @lists.each do |list| %>
+  <h2><%= link_to list.name, list_path(list) %></h2>
+<% end %>
+
+<%= link_to "Add a list with a selection of movies using simple form", new_list_path %>
