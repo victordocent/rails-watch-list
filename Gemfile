@@ -12,6 +12,8 @@ gem 'uri'
 gem 'nokogiri'
 gem 'json'
 gem "dotenv-rails"
+gem "cloudinary"
+
 
 # gem 'net/http'
 
