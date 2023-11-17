@@ -11,6 +11,8 @@ gem "open-uri"
 gem 'uri'
 gem 'nokogiri'
 gem 'json'
+gem "dotenv-rails"
+
 # gem 'net/http'
 
 
