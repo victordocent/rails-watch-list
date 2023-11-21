@@ -9,6 +9,7 @@ class ListsController < ApplicationController
 
   def show
     @movies = @list.movies
+    @bookmark = Bookmark.new
   end
 
   def new

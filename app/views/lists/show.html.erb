@@ -19,5 +19,11 @@
     <% end %>
   </div>
 
-  <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookmarkModal">
+    Add a Bookmark
+  </button>
+
+  <!-- Include the modal -->
+  <%= render 'bookmarks/form_modal' %>
 </div>
